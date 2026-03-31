@@ -3,11 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>Strona Pogodowa</title>
-        <link rel="stylesheet" href="bbb.css">
-
+        <link rel="stylesheet" href="css/baza.css">
+        <link rel="stylesheet" href="css/ui.css">
+        <link rel="stylesheet" href="css/pogoda.css">
+        <link rel="stylesheet" href="css/tlo.css">
     </head>
     <body>
-        
+        <div class="location-bar" id="location-btn">📍 Białystok</div>
+        <div class="menu-icon" id="menu-btn">&#9776;</div>
+            
+        <div class="side-menu" id="side-menu">
+            <p id="dark-mode-btn">Tryb ciemny</p>
+            <p>°C / °F</p>
+        </div>
         <main class="b">
             <div class="weather-card">
                 
@@ -18,27 +26,41 @@
                 </a>
 
                 <div class="search-box">
-                    <input type="text" class="search-input" placeholder="Wpisz miasto...">
-                    <button class="search-button">Szukaj</button>
+                    <input type="text" class="search-input" id="wyszukiwarka" placeholder="Wpisz miasto...">
+                    <button class="search-button" id="przycisk">Szukaj</button>
                 </div>
 
                 <div class="weather-result">
-                    <h2 class="temperature">tu bedzie temperatura</h2>
-                    <h3 class="city">tu bedzie miasto</h3>
+                    
+                    <h2 class="temperature" id="temperatura">--°C</h2>
+                    <h3 class="city" id="miasto">Wpisz miasto</h3>
                     
                     <div class="weather-details">
                         <div class="detail">
                             <p>💨 Wiatr</p>
-                            <p><strong>i tu bedzie wiatr w mieście</strong></p>
+                            <p><strong id="wiatr">-- km/h</strong></p>
                         </div>
                         <div class="detail">
                             <p>💧 Wilgotność</p>
-                            <p><strong>tu bedzie wilgotność w mieście</strong></p>
+                            <p><strong id="wilgotnosc">-- %</strong></p>
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </main>
+        <script>
+            const przyciskMenu = document.getElementById('menu-btn');
+            const ukryteMenu = document.getElementById('side-menu');
+            const przyciskCiemny = document.getElementById('dark-mode-btn');
+
+            przyciskMenu.addEventListener('click', () => {
+                ukryteMenu.classList.toggle('show');
+            });
+
+            przyciskCiemny.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+            });
+        </script>
 
     </body>
 </html>
