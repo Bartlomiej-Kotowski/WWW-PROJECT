@@ -3,3 +3,30 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+.przycisk {
+    background-image: linear-gradient(to left, skyblue, #c6d1cd);
+    border-radius: 30px;
+    color: black;
+    width: 90%;
+    max-width: 350px;;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    border:none;
+    height: 90%;
+    max-height: 500px;
+}
+
+.przycisk .maly-tekst {
+    font-size: 16px;
+}
+
+.przycisk .duze-miasto {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.przycisk .wielka-temperatura {
+    font-size: 48px;
+    font-weight: bold;
+}
