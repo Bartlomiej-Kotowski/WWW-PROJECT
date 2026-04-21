@@ -34,3 +34,28 @@ body {
     font-size: 48px;
     font-weight: bold;
 }
+
+.przyciski-gorne {
+width:100% ;
+position: absolute;
+top: 0;
+}
+.gorny-lewy{
+    float:left;
+}
+.gorny-prawy{
+    float:right;
+}
+.przycisk-dolny{
+    text-align:center;
+    position: absolute;
+    bottom: 0;
+
+}
+.gorny-lewy,.gorny-prawy,.przycisk-dolny{
+   background-image: linear-gradient(to left, skyblue, #c6d1cd);
+   color: black;
+   border: none;
+   border-radius: 30px;
+   padding: 20px 10px;
+}
