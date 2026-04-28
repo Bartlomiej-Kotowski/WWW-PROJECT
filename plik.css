@@ -95,3 +95,32 @@ top: 0;
    border-radius: 30px;
    padding: 20px 10px;
 }
+@media (min-width: 2000px) {
+    .boczny_przycisk, .przycisk {
+        max-width: 600px;
+        max-height: 700px;
+        padding: 60px 80px;
+    }
+    .srodek {
+        gap: 60px;
+    }
+    .boczny_przycisk .maly-tekst, .przycisk .maly-tekst {
+        font-size: 32px;
+    }
+    .boczny_przycisk .duzy-tekst {
+        font-size: 40px;
+    }
+    .przycisk .duze-miasto {
+        font-size: 50px;
+    }
+    .przycisk .wielka-temperatura {
+        font-size: 100px;
+    }
+    .gorny-lewy, .gorny-prawy, .przycisk-dolny {
+        padding: 30px 50px;
+        font-size: 30px;
+    }
+    .gorny-lewy::placeholder {
+        font-size: 30px;
+    }
+}
