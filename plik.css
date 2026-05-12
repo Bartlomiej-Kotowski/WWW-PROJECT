@@ -14,6 +14,36 @@ body {
         top: 60px;
     }
 }
+.menu_dolne {
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 600px) {
+        position: static;
+        margin-top: 100px;
+        bottom: 0;
+    }
+}
+#okienko {
+    background-image: linear-gradient(to left, skyblue, #c6d1cd);
+    border-radius: 30px;
+    color: black;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    bottom: 0;
+    animation: wskocz 1s forwards;
+}
+@keyframes wskocz {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 .boczny_przycisk {
     background-image: linear-gradient(to left, skyblue, #c6d1cd);
     border-radius: 30px;
@@ -89,14 +119,15 @@ top: 0;
 .gorny-prawy{
     float:right;
 }
-.przycisk-dolny{
+#przycisk-dolny,#zamknij{
     text-align:center;
     bottom: 0;
-    @media (min-height: 900px){
-        position: absolute;
-    }
+    cursor: pointer;
 }
-.gorny-lewy,.gorny-prawy,.przycisk-dolny{
+#zamknij {
+    width: 100px;
+}
+.gorny-lewy,.gorny-prawy,#przycisk-dolny,#zamknij{
    background-image: linear-gradient(to left, skyblue, #c6d1cd);
    color: black;
    border: none;
