@@ -163,3 +163,47 @@ top: 0;
         font-size: 30px;
     }
 }
+.ustawienia-pojemnik {
+    float: right;
+    position: relative;
+}
+
+#menu-ustawienia {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: transparent;
+}
+
+#przycisk-motyw {
+    background-image: linear-gradient(to left, skyblue, #c6d1cd);
+    color: black;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+body.dark-mode {
+    background-image: linear-gradient(to bottom, #121212, #2d2d2d);
+    color: white;
+}
+
+body.dark-mode .boczny_przycisk,
+body.dark-mode .przycisk,
+body.dark-mode .gorny-lewy,
+body.dark-mode .gorny-prawy,
+body.dark-mode #przycisk-dolny,
+body.dark-mode #zamknij,
+body.dark-mode #okienko,
+body.dark-mode #przycisk-motyw {
+    background-image: linear-gradient(to left, #333333, #555555);
+    color: white;
+}
+
+body.dark-mode .menu_gorne p,
+body.dark-mode .menu_dolne a {
+    color: white;
+}
