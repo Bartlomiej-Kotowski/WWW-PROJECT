@@ -2,16 +2,15 @@ document.body.innerHTML = '';//sprawdza czy cos jest w body
 
 const menuGorne = document.createElement('div');
 menuGorne.className = 'menu_gorne';
-const linkTestowy = document.createElement('a');
-linkTestowy.href = 'https://pogoda.interia.pl/prognoza-dlugoterminowa-bialystok,cId,1197';
-linkTestowy.textContent = 'strona testowa';
 const tytulAplikacji = document.createElement('p');
 tytulAplikacji.textContent = 'Aplikacja pogodowa';
-menuGorne.append(linkTestowy, tytulAplikacji);
+menuGorne.append(tytulAplikacji);
 document.body.append(menuGorne);
 
 const srodek = document.createElement('div');
 srodek.className = 'srodek';
+srodek.id = 'glowna';
+srodek.classList.add('strona');
 
 const lewyPrzycisk = document.createElement('button');
 lewyPrzycisk.className = 'boczny_przycisk';
@@ -80,16 +79,36 @@ ustawieniaPojemnik.append(btnUstawienia, menuUstawienia);
 przyciskiGorne.append(inputMiasto, ustawieniaPojemnik);
 document.body.append(przyciskiGorne);
 
+function zmianastrony(indeks) {
+    document.querySelectorAll('.strona').forEach(podstrona => {
+        podstrona.style.display = 'none';
+    });
+    if(strony[indeks] !== 'glowna') {
+        inputMiasto.style.display = 'none';
+        btnPokazWiecej.style.display = 'none';
+    }
+    else {
+        inputMiasto.style.display = 'block';
+        btnPokazWiecej.style.display = 'block';
+    }
+    document.getElementById(strony[indeks]).style.display = 'flex';
+}
+
 const menuDolne = document.createElement('div');
 menuDolne.className = 'menu_dolne';
 const nav = document.createElement('nav');
 const ul = document.createElement('ul');
-const linkiMenu = ['Strona główna', 'Blog', 'Kontakt'];
+const linkiMenu = ['Strona główna', 'O nas', 'FAQ'];
+const strony = ['glowna', 'onas', 'faq'];
 linkiMenu.forEach(tekst => {
     const li = document.createElement('li');
     const a = document.createElement('a');
-    a.href = '#';
+    a.href = '#' + strony[linkiMenu.indexOf(tekst)];
     a.textContent = tekst;
+    a.addEventListener("click", (e) => {
+        e.preventDefault();
+        zmianastrony(linkiMenu.indexOf(tekst));
+    });
     li.append(a);
     ul.append(li);
 });
@@ -137,3 +156,17 @@ btnMotyw.addEventListener("click", () => {
         btnMotyw.textContent = "Motyw ciemny";
     }
 });
+
+onas = document.createElement('div');
+onas.id = 'onas';
+onas.className = 'strona';
+onas.style.display = 'none';
+onas.textContent = 'placeholder o nas';
+document.body.append(onas);
+
+faq = document.createElement('div');
+faq.id = 'faq';
+faq.style.display = 'none';
+faq.className = 'strona';
+faq.textContent = 'placeholder faq';
+document.body.append(faq);
