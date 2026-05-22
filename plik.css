@@ -8,8 +8,8 @@ body {
     justify-content: center;
     overflow-y: auto;
 }
-.menu_gorne {
-    @media (max-width: 600px) {
+@media (max-width: 600px) {
+    .menu_gorne {
         position: relative;
         top: 60px;
     }
@@ -19,10 +19,20 @@ body {
     flex-direction: column;
     @media (max-width: 600px) {
         position: static;
-        margin-top: 100px;
+        margin-top: 150px;
         bottom: 0;
     }
 }
+.menu-lista{
+    top: 0;
+    display: block;
+    position: absolute;
+    gap: 15px;
+    @media (max-width: 600px) {
+        top: 50px;
+    }
+}
+
 #okienko {
     background-image: linear-gradient(to left, skyblue, #c6d1cd);
     border-radius: 30px;
@@ -71,7 +81,7 @@ body {
     justify-content: center; 
     @media (max-width: 600px) {
         position: relative;
-        top: 60px;
+        top: 130px;
         flex-direction: column;
         button{
             &:nth-child(1){

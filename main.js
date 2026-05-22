@@ -2,9 +2,6 @@ document.body.innerHTML = '';//sprawdza czy cos jest w body
 
 const menuGorne = document.createElement('div');
 menuGorne.className = 'menu_gorne';
-const tytulAplikacji = document.createElement('p');
-tytulAplikacji.textContent = 'Aplikacja pogodowa';
-menuGorne.append(tytulAplikacji);
 document.body.append(menuGorne);
 
 const srodek = document.createElement('div');
@@ -94,8 +91,8 @@ function zmianastrony(indeks) {
     document.getElementById(strony[indeks]).style.display = 'flex';
 }
 
-const menuDolne = document.createElement('div');
-menuDolne.className = 'menu_dolne';
+const menulista = document.createElement('div');
+menulista.className = 'menu-lista';
 const nav = document.createElement('nav');
 const ul = document.createElement('ul');
 const linkiMenu = ['Strona główna', 'O nas', 'FAQ'];
@@ -113,10 +110,14 @@ linkiMenu.forEach(tekst => {
     ul.append(li);
 });
 nav.append(ul);
+menulista.append(nav);
+document.body.append(menulista);
+const menuDolne = document.createElement('div');
+menuDolne.className = 'menu_dolne';
 const btnPokazWiecej = document.createElement('button');
 btnPokazWiecej.id = 'przycisk-dolny';
 btnPokazWiecej.textContent = 'Pokaz wiecej';
-menuDolne.append(nav, btnPokazWiecej);
+menuDolne.append(btnPokazWiecej);
 document.body.append(menuDolne);
 
 const okienko = document.createElement('div');
