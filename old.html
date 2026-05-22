@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pogoda BIK</title>
+        <script defer src="pokazwiecej.js"></script>
+        <link rel="stylesheet" href="plik.css">
+    </head>
+    <body>
+        <div id="app"></div>
+        <div class="menu_gorne">
+            <a href="https://pogoda.interia.pl/prognoza-dlugoterminowa-bialystok,cId,1197">strona testowa</a>
+            <p>Aplikacja pogodowa</p>
+        </div>
+        <div class="srodek">
+            <button class="boczny_przycisk">
+                <span class="duzy-tekst">Prognoza na tydzień</span>
+                <span class="maly-tekst">pon. </span>
+                <span class="maly-tekst">wt. </span>
+                <span class="maly-tekst">śr. </span>
+                <span class="maly-tekst">czw. </span>
+                <span class="maly-tekst">pią. </span>
+                <span class="maly-tekst">sob. </span>
+            </button>
+            <button class="przycisk">
+                <span class="maly-tekst">Aktualna Pogoda</span>
+                <span class="duze-miasto">Warszawa</span>
+                <span class="wielka-temperatura">7°C</span>
+            </button>
+            <button class="boczny_przycisk">
+                <span class="duzy-tekst">Prognoza na dziś</span>
+                <span class="maly-tekst">12:00 </span>
+                <span class="maly-tekst">13:00 </span>
+                <span class="maly-tekst">14:00 </span>
+                <span class="maly-tekst">15:00 </span>
+                <span class="maly-tekst">16:00 </span>
+                <span class="maly-tekst">17:00 </span>
+            </button>
+        </div>
+        <div class="przyciski-gorne">
+            <input type="text" class="gorny-lewy" placeholder="Wpisz miasto">
+            <div class="ustawienia-pojemnik">
+                <button class="gorny-prawy" id="przycisk-ustawienia">Ustawienia</button>
+                <div id="menu-ustawienia">
+                    <button id="przycisk-motyw">Motyw ciemny</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu_dolne">
+            <nav>
+            <ul>
+                <li><a href="#">Strona główna</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+            </nav>
+            <button id="przycisk-dolny": hover>Pokaz wiecej</button>
+        </div>
+        <div id="okienko">
+            <img src="leclerc.jpeg">
+            <div id="przycisk_okienko">
+                <button id="zamknij">Zamknij</button>
+            </div>
+        </div>
+    </body>
+</html>
