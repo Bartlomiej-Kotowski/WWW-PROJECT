@@ -30,10 +30,10 @@ malyTekst.className = 'maly-tekst';
 malyTekst.textContent = 'Aktualna Pogoda';
 const duzeMiasto = document.createElement('span');
 duzeMiasto.className = 'duze-miasto';
-duzeMiasto.textContent = 'Warszawa';
+duzeMiasto.textContent = 'Nie wybrano miasta';
 const wielkaTemp = document.createElement('span');
 wielkaTemp.className = 'wielka-temperatura';
-wielkaTemp.textContent = '7°C';
+wielkaTemp.textContent = '--°C';
 przyciskPogoda.append(malyTekst, duzeMiasto, wielkaTemp);
 
 const prawyPrzycisk = document.createElement('button');
@@ -57,6 +57,7 @@ const przyciskiGorne = document.createElement('div');
 przyciskiGorne.className = 'przyciski-gorne';
 const inputMiasto = document.createElement('input');
 inputMiasto.type = 'text';
+inputMiasto.id = 'wpisywanie';
 inputMiasto.className = 'gorny-lewy';
 inputMiasto.placeholder = 'Wpisz miasto';
 const ustawieniaPojemnik = document.createElement('div');
@@ -157,6 +158,35 @@ btnMotyw.addEventListener("click", () => {
         btnMotyw.textContent = "Motyw ciemny";
     }
 });
+
+inputMiasto.addEventListener("keydown", async (e) => {
+    if (e.key === "Enter") {
+        const wpisanemiasto = document.getElementById('wpisywanie').value.trim();
+        try {
+            const MIASTO = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${wpisanemiasto}&count=1&language=pl&format=json`);
+            const dane = await MIASTO.json();
+            if(!dane.results || dane.results.length === 0) {
+            alert("Nie znaleziono miasta");
+            return;
+        }
+    const znalezioneMiasto = dane.results[0];
+    const lat = znalezioneMiasto.latitude;
+    const lon = znalezioneMiasto.longitude;
+    const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`;
+    const pogodaOdpowiedz = await fetch(API);
+    const pogodaDane = await pogodaOdpowiedz.json();
+    console.log(pogodaDane);
+    duzeMiasto.textContent = wpisanemiasto;
+    wielkaTemp.textContent = `${Math.round(pogodaDane.current.temperature_2m)}°C`;
+    } catch (error) {
+        console.error("Błąd podczas pobierania danych:", error);
+        alert("Wystąpił błąd podczas pobierania danych. Sprawdź konsolę dla więcej informacji.");
+    }
+}});
+
+
+
+
 
 onas = document.createElement('div');
 onas.id = 'onas';
