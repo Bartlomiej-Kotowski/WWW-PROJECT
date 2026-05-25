@@ -195,9 +195,50 @@ onas.style.display = 'none';
 onas.textContent = 'placeholder o nas';
 document.body.append(onas);
 
-faq = document.createElement('div');
+const faq = document.createElement('div');
 faq.id = 'faq';
 faq.style.display = 'none';
 faq.className = 'strona';
-faq.textContent = 'placeholder faq';
+
 document.body.append(faq);
+
+const daneFaq = [
+    {
+        pytanie: "Skąd strona pobiera dane o pogodzie?",
+        odpowiedz: "Nasza strona korzysta z darmowego API open meteo."
+    },
+    {
+        pytanie: "Jak zmienić wygląd strony na tryb nocny?",
+        odpowiedz: "Wystarczy kliknąć przycisk 'Ustawienia' i wybrać 'Motyw ciemny'."
+    },
+    {   pytanie: "Na ile dni w przód mogę sprawdzić prognozę?",
+        odpowiedz: "Strona oferuje szczegółową prognozę godzinową na bieżący dzień oraz ogólny zarys przewidywanej pogody na cały nadchodzący tydzień."
+    },
+    {
+        pytanie: "Czy planujecie dalszy rozwój strony?",
+        odpowiedz: "Oczywiscie! Mamy już wiele planów jak udoskonalić naszą już dobrze działającą stronę. Jednak potrzebujemy trochę czasu żeby je móc wdrożyć. "
+    },
+    {
+        pytanie:"Co jesli nie moge znalezc swojego miasta?",
+        odpowiedz: "No to masz problem..."
+    },
+    {
+        pytanie:"Gdzie znalezc banana Leclerca?",
+        odpowiedz:"Wystarczy kliknac przycisk 'pokaz wiecej'."
+    }
+
+];
+daneFaq.forEach(element => {
+   const blokFaq = document.createElement('div'); 
+    blokFaq.className = 'kafelek-faq'; 
+
+    const naglowek = document.createElement('h3');
+    naglowek.className = 'pytanie-faq';
+    naglowek.textContent = element.pytanie;
+
+    const akapit = document.createElement('p');
+    akapit.textContent = element.odpowiedz;
+
+    blokFaq.append(naglowek, akapit);
+    faq.append(blokFaq);
+});
