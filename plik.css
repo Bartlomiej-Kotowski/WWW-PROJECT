@@ -205,6 +205,7 @@ body.dark-mode .boczny_przycisk,
 body.dark-mode .przycisk,
 body.dark-mode .gorny-lewy,
 body.dark-mode .gorny-prawy,
+body.dark-mode .kafelek-faq,
 body.dark-mode #przycisk-dolny,
 body.dark-mode #zamknij,
 body.dark-mode #okienko,
@@ -216,4 +217,17 @@ body.dark-mode #przycisk-motyw {
 body.dark-mode .menu_gorne p,
 body.dark-mode .menu_dolne a {
     color: white;
+}
+.kafelek-faq {
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    max-width: 600px;
+    text-align: left;
+}
+#faq {
+    flex-direction: column;
+    align-items: center;   
+    gap: 10px; 
+    margin-top: 80px;
 }
