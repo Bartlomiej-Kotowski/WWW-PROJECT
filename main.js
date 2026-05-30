@@ -1,5 +1,23 @@
 document.body.innerHTML = '';//sprawdza czy cos jest w body
 
+const ruchomeTlo = document.createElement('div');
+ruchomeTlo.className = 'ruchome-tlo';
+
+const slonce = document.createElement('div');
+slonce.className = 'slonce';
+ruchomeTlo.append(slonce);
+
+const pasChmur = document.createElement('div');
+pasChmur.className = 'pas-chmur';
+for (let i = 1; i <= 8; i++) {
+  const chmura = document.createElement('div');
+  chmura.className = `chmura chmura${i}`;
+  pasChmur.append(chmura);
+}
+ruchomeTlo.append(pasChmur);
+document.body.append(ruchomeTlo);
+
+
 const menuGorne = document.createElement('div');
 menuGorne.className = 'menu_gorne';
 document.body.append(menuGorne);
@@ -40,7 +58,7 @@ const prawyPrzycisk = document.createElement('button');
 prawyPrzycisk.className = 'boczny_przycisk';
 const tytulDzis = document.createElement('span');
 tytulDzis.className = 'duzy-tekst';
-tytulDzis.textContent = 'Prognoza na dziś';
+tytulDzis.textContent = 'Prognoza  nna dziś';
 prawyPrzycisk.append(tytulDzis);
 const godziny = ['12:00 ', '13:00 ', '14:00 ', '15:00 ', '16:00 ', '17:00 '];
 godziny.forEach(godz => {
@@ -67,7 +85,7 @@ btnUstawienia.className = 'gorny-prawy';
 btnUstawienia.id = 'przycisk-ustawienia';
 btnUstawienia.textContent = 'Ustawienia';
 const menuUstawienia = document.createElement('div');
-menuUstawienia.id = 'menu-ustawienia';
+menuUstawienia.id = 'menu-ustawienia ';
 const btnMotyw = document.createElement('button');
 btnMotyw.id = 'przycisk-motyw';
 btnMotyw.textContent = 'Motyw ciemny';

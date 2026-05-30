@@ -1,0 +1,338 @@
+
+body {
+    background: linear-gradient(to bottom, skyblue, white);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.ruchome-tlo {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.slonce {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #ffe066 0%, #ffb703 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255, 183, 3, 0.8);
+    animation: ruchSlonca 25s linear infinite;
+}
+
+.pas-chmur {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 200vw;
+    height: 260px;
+    animation: ruchChmur 45s linear infinite;
+}
+
+.chmura {
+    position: absolute;
+    width: 220px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 100px;
+}
+
+.chmura::before,
+.chmura::after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.chmura::before {
+    width: 90px;
+    height: 90px;
+    top: -40px;
+    left: 40px;
+}
+
+.chmura::after {
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    left: 100px;
+}
+
+.chmura1 {
+    left: 5vw;
+    top: 40px;
+}
+
+.chmura2 {
+    left: 30vw;
+    top: 130px;
+    transform: scale(0.8);
+    opacity: 0.8;
+}
+
+.chmura3 {
+    left: 55vw;
+    top: 20px;
+    transform: scale(1.15);
+    opacity: 0.9;
+}
+
+.chmura4 {
+    left: 80vw;
+    top: 150px;
+    transform: scale(0.7);
+    opacity: 0.75;
+}
+
+.chmura5 {
+    left: 105vw;
+    top: 40px;
+}
+
+.chmura6 {
+    left: 130vw;
+    top: 130px;
+    transform: scale(0.8);
+    opacity: 0.8;
+}
+
+.chmura7 {
+    left: 155vw;
+    top: 20px;
+    transform: scale(1.15);
+    opacity: 0.9;
+}
+
+.chmura8 {
+    left: 180vw;
+    top: 150px;
+    transform: scale(0.7);
+    opacity: 0.75;
+}
+
+@keyframes ruchSlonca {
+    0% {
+        left: -150px;
+        top: 160px;
+    }
+
+    50% {
+        top: 50px;
+    }
+
+    100% {
+        left: 110vw;
+        top: 160px;
+    }
+}
+
+@keyframes ruchChmur {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100vw);
+    }
+}
+
+/* TELEFONY */
+@media (max-width: 600px) {
+    .slonce {
+        width: 80px;
+        height: 80px;
+        animation-duration: 22s;
+    }
+
+    .pas-chmur {
+        top: 140px;
+        height: 180px;
+        animation-duration: 35s;
+    }
+
+    .chmura {
+        width: 130px;
+        height: 45px;
+    }
+
+    .chmura::before {
+        width: 55px;
+        height: 55px;
+        top: -25px;
+        left: 25px;
+    }
+
+    .chmura::after {
+        width: 75px;
+        height: 75px;
+        top: -38px;
+        left: 60px;
+    }
+
+    .chmura1 {
+        left: 3vw;
+        top: 30px;
+    }
+
+    .chmura2 {
+        left: 28vw;
+        top: 95px;
+        transform: scale(0.75);
+    }
+
+    .chmura3 {
+        left: 55vw;
+        top: 15px;
+        transform: scale(0.9);
+    }
+
+    .chmura4 {
+        left: 82vw;
+        top: 110px;
+        transform: scale(0.65);
+    }
+
+    .chmura5 {
+        left: 103vw;
+        top: 30px;
+    }
+
+    .chmura6 {
+        left: 128vw;
+        top: 95px;
+        transform: scale(0.75);
+    }
+
+    .chmura7 {
+        left: 155vw;
+        top: 15px;
+        transform: scale(0.9);
+    }
+
+    .chmura8 {
+        left: 182vw;
+        top: 110px;
+        transform: scale(0.65);
+    }
+
+    @keyframes ruchSlonca {
+        0% {
+            left: -100px;
+            top: 200px;
+        }
+
+        50% {
+            top: 120px;
+        }
+
+        100% {
+            left: 110vw;
+            top: 200px;
+        }
+    }
+}
+
+/* SZEROKIE EKRANY */
+@media (min-width: 1600px) {
+    .slonce {
+        width: 170px;
+        height: 170px;
+        animation-duration: 35s;
+    }
+
+    .pas-chmur {
+        top: 100px;
+        height: 330px;
+        animation-duration: 65s;
+    }
+
+    .chmura {
+        width: 320px;
+        height: 100px;
+    }
+
+    .chmura::before {
+        width: 130px;
+        height: 130px;
+        top: -60px;
+        left: 60px;
+    }
+
+    .chmura::after {
+        width: 170px;
+        height: 170px;
+        top: -85px;
+        left: 140px;
+    }
+
+    .chmura1 {
+        left: 5vw;
+        top: 60px;
+    }
+
+    .chmura2 {
+        left: 30vw;
+        top: 170px;
+        transform: scale(0.8);
+    }
+
+    .chmura3 {
+        left: 55vw;
+        top: 30px;
+        transform: scale(1.15);
+    }
+
+    .chmura4 {
+        left: 80vw;
+        top: 200px;
+        transform: scale(0.7);
+    }
+
+    .chmura5 {
+        left: 105vw;
+        top: 60px;
+    }
+
+    .chmura6 {
+        left: 130vw;
+        top: 170px;
+        transform: scale(0.8);
+    }
+
+    .chmura7 {
+        left: 155vw;
+        top: 30px;
+        transform: scale(1.15);
+    }
+
+    .chmura8 {
+        left: 180vw;
+        top: 200px;
+        transform: scale(0.7);
+    }
+
+    @keyframes ruchSlonca {
+        0% {
+            left: -200px;
+            top: 220px;
+        }
+
+        50% {
+            top: 70px;
+        }
+
+        100% {
+            left: 110vw;
+            top: 220px;
+        }
+    }
+}
+
+/* TRYB CIEMNY */
+body.dark-mode .ruchome-tlo {
+    display: none;
+}
