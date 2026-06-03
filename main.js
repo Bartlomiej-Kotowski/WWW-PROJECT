@@ -192,10 +192,8 @@ inputMiasto.addEventListener("keydown", async (e) => {
         hour: '2-digit',
         hour12: false
     }));
-    const minuta = Number(new Date().toLocaleTimeString('en-US', {
-        timeZone: znalezioneMiasto.timezone,
-        minute: '2-digit'
-    }));
+    const minuta = String(new Date().getMinutes()).padStart(2, '0');
+
     const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&hourly=temperature_2m&timezone=auto`;
     const pogodaOdpowiedz = await fetch(API);
     const pogodaDane = await pogodaOdpowiedz.json();
