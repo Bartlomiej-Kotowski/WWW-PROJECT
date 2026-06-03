@@ -180,7 +180,7 @@ btnMotyw.addEventListener("click", () => {
 
 inputMiasto.addEventListener("keydown", async (e) => {
     if (e.key === "Enter") {
-        const wpisanemiasto = document.getElementById('wpisywanie').value.trim();
+        let wpisanemiasto = document.getElementById('wpisywanie').value.trim().toUpperCase();
         try {
             const MIASTO = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${wpisanemiasto}&count=1&language=pl&format=json`);
             const dane = await MIASTO.json();
