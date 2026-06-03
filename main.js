@@ -46,27 +46,24 @@ przyciskPogoda.className = 'przycisk';
 const malyTekst = document.createElement('span');
 malyTekst.className = 'maly-tekst';
 malyTekst.textContent = 'Aktualna Pogoda';
+const obecnaGodzina = document.createElement('span');
+obecnaGodzina.className='maly-tekst';
+obecnaGodzina.textContent='Obecna godzina: ';
 const duzeMiasto = document.createElement('span');
 duzeMiasto.className = 'duze-miasto';
 duzeMiasto.textContent = 'Nie wybrano miasta';
 const wielkaTemp = document.createElement('span');
 wielkaTemp.className = 'wielka-temperatura';
 wielkaTemp.textContent = '--°C';
-przyciskPogoda.append(malyTekst, duzeMiasto, wielkaTemp);
+przyciskPogoda.append(malyTekst, obecnaGodzina, duzeMiasto, wielkaTemp);
 
 const prawyPrzycisk = document.createElement('button');
 prawyPrzycisk.className = 'boczny_przycisk';
 const tytulDzis = document.createElement('span');
 tytulDzis.className = 'duzy-tekst';
-tytulDzis.textContent = 'Prognoza  nna dziś';
+tytulDzis.textContent = 'Prognoza na dziś';
 prawyPrzycisk.append(tytulDzis);
-const godziny = ['12:00 ', '13:00 ', '14:00 ', '15:00 ', '16:00 ', '17:00 '];
-godziny.forEach(godz => {
-    const span = document.createElement('span');
-    span.className = 'maly-tekst';
-    span.textContent = godz;
-    prawyPrzycisk.append(span);
-});
+
 
 srodek.append(lewyPrzycisk, przyciskPogoda, prawyPrzycisk);
 document.body.append(srodek);
@@ -190,12 +187,31 @@ inputMiasto.addEventListener("keydown", async (e) => {
     const znalezioneMiasto = dane.results[0];
     const lat = znalezioneMiasto.latitude;
     const lon = znalezioneMiasto.longitude;
-    const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`;
+    const godzina = Number(new Date().toLocaleTimeString('en-US', {
+        timeZone: znalezioneMiasto.timezone,
+        hour: '2-digit',
+        hour12: false
+    }));
+    const minuta = Number(new Date().toLocaleTimeString('en-US', {
+        timeZone: znalezioneMiasto.timezone,
+        minute: '2-digit'
+    }));
+    const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&hourly=temperature_2m&timezone=auto`;
     const pogodaOdpowiedz = await fetch(API);
     const pogodaDane = await pogodaOdpowiedz.json();
     console.log(pogodaDane);
     duzeMiasto.textContent = wpisanemiasto;
     wielkaTemp.textContent = `${Math.round(pogodaDane.current.temperature_2m)}°C`;
+    obecnaGodzina.textContent = 'Obecna godzina: '+godzina+':'+minuta;
+    prawyPrzycisk.textContent = ''
+    prawyPrzycisk.append(tytulDzis);
+    const godziny = [godzina+1,godzina+2,godzina+3,godzina+4,godzina+5,godzina+6,godzina+7,godzina+8];
+    godziny.forEach(godz => {
+        const span = document.createElement('span');
+        span.className = 'maly-tekst';
+        span.textContent = godz+':00  -  '+Math.round(pogodaDane.hourly.temperature_2m[godz])+'°C';
+        prawyPrzycisk.append(span);
+});
     } catch (error) {
         console.error("Błąd podczas pobierania danych:", error);
         alert("Wystąpił błąd podczas pobierania danych. Sprawdź konsolę dla więcej informacji.");
