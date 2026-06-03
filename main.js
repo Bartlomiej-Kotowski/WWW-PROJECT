@@ -31,15 +31,14 @@ const lewyPrzycisk = document.createElement('button');
 lewyPrzycisk.className = 'boczny_przycisk';
 const tytulTydzien = document.createElement('span');
 tytulTydzien.className = 'duzy-tekst';
-tytulTydzien.textContent = 'Prognoza na tydzień';
+tytulTydzien.textContent = 'Prognoza na tydzień (12:00)';
 lewyPrzycisk.append(tytulTydzien);
-const dniTygodnia = ['pon. ', 'wt. ', 'śr. ', 'czw. ', 'pią. ', 'sob. '];
-dniTygodnia.forEach(dzien => {
+for(i=0; i<7; i++){
     const span = document.createElement('span');
     span.className = 'maly-tekst';
-    span.textContent = dzien;
+    span.textContent = '--';
     lewyPrzycisk.append(span);
-});
+};
 
 const przyciskPogoda = document.createElement('button');
 przyciskPogoda.className = 'przycisk';
@@ -63,7 +62,12 @@ const tytulDzis = document.createElement('span');
 tytulDzis.className = 'duzy-tekst';
 tytulDzis.textContent = 'Prognoza na dziś';
 prawyPrzycisk.append(tytulDzis);
-
+for(i=0; i<8; i++){
+        const span = document.createElement('span');
+        span.className = 'maly-tekst';
+        span.textContent = '--';
+        prawyPrzycisk.append(span);
+};
 
 srodek.append(lewyPrzycisk, przyciskPogoda, prawyPrzycisk);
 document.body.append(srodek);
@@ -187,19 +191,18 @@ inputMiasto.addEventListener("keydown", async (e) => {
     const znalezioneMiasto = dane.results[0];
     const lat = znalezioneMiasto.latitude;
     const lon = znalezioneMiasto.longitude;
-    const godzina = Number(new Date().toLocaleTimeString('en-US', {
+    const godzina = Number(new Date().toLocaleTimeString('pl-PL', {
         timeZone: znalezioneMiasto.timezone,
         hour: '2-digit',
         hour12: false
     }));
     const minuta = String(new Date().getMinutes()).padStart(2, '0');
-
-    const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&hourly=temperature_2m&timezone=auto`;
+    const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&hourly=temperature_2m&timezone=auto&forecast_days=10`;
     const pogodaOdpowiedz = await fetch(API);
     const pogodaDane = await pogodaOdpowiedz.json();
     console.log(pogodaDane);
     duzeMiasto.textContent = wpisanemiasto;
-    wielkaTemp.textContent = `${Math.round(pogodaDane.current.temperature_2m)}°C`;
+    wielkaTemp.textContent = Math.round(pogodaDane.current.temperature_2m)+'°C';
     obecnaGodzina.textContent = 'Obecna godzina: '+godzina+':'+minuta;
     prawyPrzycisk.textContent = ''
     prawyPrzycisk.append(tytulDzis);
@@ -209,7 +212,21 @@ inputMiasto.addEventListener("keydown", async (e) => {
         span.className = 'maly-tekst';
         span.textContent = godz+':00  -  '+Math.round(pogodaDane.hourly.temperature_2m[godz])+'°C';
         prawyPrzycisk.append(span);
-});
+    });
+    lewyPrzycisk.textContent = ''
+    lewyPrzycisk.append(tytulTydzien);
+    for(i=1; i<=7; i++){
+        const data = new Date();
+        data.setDate(data.getDate() + i);
+        const dzien = new Intl.DateTimeFormat('pl-PL', {
+            weekday: 'short',
+            timeZone: znalezioneMiasto.timezone
+        }).format(data);
+        const span = document.createElement('span');
+        span.className = 'maly-tekst';
+        span.textContent = dzien+' - '+Math.round(pogodaDane.hourly.temperature_2m[12+i*24])+'°C';
+        lewyPrzycisk.append(span);
+    }
     } catch (error) {
         console.error("Błąd podczas pobierania danych:", error);
         alert("Wystąpił błąd podczas pobierania danych. Sprawdź konsolę dla więcej informacji.");
