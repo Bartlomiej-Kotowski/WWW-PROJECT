@@ -65,7 +65,7 @@ prawyPrzycisk.append(tytulDzis);
 for(i=0; i<8; i++){
         const span = document.createElement('span');
         span.className = 'maly-tekst';
-        span.textContent = '--';
+        span.textContent = '--:00';
         prawyPrzycisk.append(span);
 };
 
@@ -152,7 +152,11 @@ function dodajTekstDoBloku(blok, tekst, klasa) {
     span.textContent = tekst;
     blok.append(span);
 }
-
+let godziny = ['--','--','--','--','--','--','--','--'];
+let szansa = '--';
+let godzinateraz = '';
+let cisnienia = ['','','','','','','',''];
+let zachmurzenia = ['','','','','','','',''];
 function pokazCzysteBloki() {
     trybCzystychBlokow = true;
     btnPokazWiecej.textContent = 'Wróć';
@@ -165,17 +169,24 @@ function pokazCzysteBloki() {
     przyciskPogoda.textContent = '';
     prawyPrzycisk.textContent = '';
 
-    dodajTekstDoBloku(lewyPrzycisk, 'Blok 1', 'duzy-tekst');
-    dodajTekstDoBloku(lewyPrzycisk, '67 bingus');
-    dodajTekstDoBloku(lewyPrzycisk, 'KALILEK');
+    dodajTekstDoBloku(lewyPrzycisk, 'Ciśnienie atomsfetyczne', 'duzy-tekst');
+    let i = 0;
+    let j = 0;
+    godziny.forEach(godz => {
+        dodajTekstDoBloku(lewyPrzycisk, godz+':00 - '+cisnienia[i], 'maly-tekst');
+        i++;
+    });
 
-    dodajTekstDoBloku(przyciskPogoda, 'Blok 2', 'maly-tekst');
-    dodajTekstDoBloku(przyciskPogoda, 'Środkowy blok', 'duze-miasto');
-    dodajTekstDoBloku(przyciskPogoda, '--', 'wielka-temperatura');
+    dodajTekstDoBloku(przyciskPogoda, 'Aktualna Pogoda', 'maly-tekst');
+    dodajTekstDoBloku(przyciskPogoda, 'Obecna godzina: '+godzinateraz, 'maly-tekst');
+    dodajTekstDoBloku(przyciskPogoda, 'Szansa na opady', 'duze-miasto');
+    dodajTekstDoBloku(przyciskPogoda, szansa + '%', 'wielka-temperatura');
 
-    dodajTekstDoBloku(prawyPrzycisk, 'Blok 3', 'duzy-tekst');
-    dodajTekstDoBloku(prawyPrzycisk, 'KAMIL DASZ RADE');
-    dodajTekstDoBloku(prawyPrzycisk, 'elklerek bananrek rip');
+    dodajTekstDoBloku(prawyPrzycisk, 'Zachmurzenie', 'duzy-tekst');
+    godziny.forEach(godz => {
+        dodajTekstDoBloku(prawyPrzycisk, godz+':00 - '+zachmurzenia[j], 'maly-tekst');
+        j++;
+    });
 }
 
 function wrocDoPogody() {
@@ -235,21 +246,32 @@ inputMiasto.addEventListener("keydown", async (e) => {
         hour12: false
     }));
     const minuta = String(new Date().getMinutes()).padStart(2, '0');
-    const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&hourly=temperature_2m&timezone=auto&forecast_days=10`;
+    const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=precipitation_probability_max&hourly=temperature_2m,surface_pressure,cloud_cover&current=temperature_2m,apparent_temperature&timezone=auto&forecast_days=10`
     const pogodaOdpowiedz = await fetch(API);
     const pogodaDane = await pogodaOdpowiedz.json();
     console.log(pogodaDane);
     duzeMiasto.textContent = wpisanemiasto;
-    wielkaTemp.textContent = Math.round(pogodaDane.current.temperature_2m)+'°C';
-    obecnaGodzina.textContent = 'Obecna godzina: '+godzina+':'+minuta;
+    wielkaTemp.textContent = Math.round(pogodaDane.current.temperature_2m)+'°C' + '   ('+Math.round(pogodaDane.current.apparent_temperature)+'°C)';
+    godzinateraz = godzina+":"+minuta;
+    obecnaGodzina.textContent = 'Obecna godzina: '+godzinateraz;
     prawyPrzycisk.textContent = ''
     prawyPrzycisk.append(tytulDzis);
-    const godziny = [godzina+1,godzina+2,godzina+3,godzina+4,godzina+5,godzina+6,godzina+7,godzina+8];
+    godziny = [godzina+1,godzina+2,godzina+3,godzina+4,godzina+5,godzina+6,godzina+7,godzina+8];
+    let czynastepnydzien = 0;
+    let k = 0;
     godziny.forEach(godz => {
+        if(godz > 23){
+            godz -= 24;
+            godziny[k] -= 24;
+            czynastepnydzien += 24;
+        }
         const span = document.createElement('span');
         span.className = 'maly-tekst';
-        span.textContent = godz+':00  -  '+Math.round(pogodaDane.hourly.temperature_2m[godz])+'°C';
+        span.textContent = godz+':00  -  '+Math.round(pogodaDane.hourly.temperature_2m[godz+czynastepnydzien])+'°C';
         prawyPrzycisk.append(span);
+        cisnienia[k] = pogodaDane.hourly.surface_pressure[godz+czynastepnydzien]+' hPa';
+        zachmurzenia[k] = pogodaDane.hourly.cloud_cover[godz+czynastepnydzien]+'%';
+        k++;
     });
     lewyPrzycisk.textContent = ''
     lewyPrzycisk.append(tytulTydzien);
@@ -265,6 +287,7 @@ inputMiasto.addEventListener("keydown", async (e) => {
         span.textContent = dzien+' - '+Math.round(pogodaDane.hourly.temperature_2m[12+i*24])+'°C';
         lewyPrzycisk.append(span);
     }
+    szansa = pogodaDane.daily.precipitation_probability_max[0];
     } catch (error) {
         console.error("Błąd podczas pobierania danych:", error);
         alert("Wystąpił błąd podczas pobierania danych. Sprawdź konsolę dla więcej informacji.");
