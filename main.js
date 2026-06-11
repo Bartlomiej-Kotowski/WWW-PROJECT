@@ -261,13 +261,12 @@ inputMiasto.addEventListener("keydown", async (e) => {
     let k = 0;
     godziny.forEach(godz => {
         if(godz > 23){
-            godz -= 24;
             godziny[k] -= 24;
             czynastepnydzien += 24;
         }
         const span = document.createElement('span');
         span.className = 'maly-tekst';
-        span.textContent = godz+':00  -  '+Math.round(pogodaDane.hourly.temperature_2m[godz+czynastepnydzien])+'°C';
+        span.textContent = godziny[k]+':00  -  '+Math.round(pogodaDane.hourly.temperature_2m[godziny[k]+czynastepnydzien])+'°C';
         prawyPrzycisk.append(span);
         cisnienia[k] = pogodaDane.hourly.surface_pressure[godz+czynastepnydzien]+' hPa';
         zachmurzenia[k] = pogodaDane.hourly.cloud_cover[godz+czynastepnydzien]+'%';
