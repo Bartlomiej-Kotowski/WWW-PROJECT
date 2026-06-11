@@ -140,25 +140,63 @@ btnPokazWiecej.textContent = 'Pokaz wiecej';
 menuDolne.append(btnPokazWiecej);
 document.body.append(menuDolne);
 
-const okienko = document.createElement('div');
-okienko.id = 'okienko';
-const obrazek = document.createElement('img');
-obrazek.src = 'leclerc.jpeg';
-const przyciskOkienkoDiv = document.createElement('div');
-przyciskOkienkoDiv.id = 'przycisk_okienko';
-const btnZamknij = document.createElement('button');
-btnZamknij.id = 'zamknij';
-btnZamknij.textContent = 'Zamknij';
-przyciskOkienkoDiv.append(btnZamknij);
-okienko.append(obrazek, przyciskOkienkoDiv);
-document.body.append(okienko);
+let trybCzystychBlokow = false;
 
-btnPokazWiecej.addEventListener("click", () => {
-    okienko.style.display = 'flex';
-});
+let zapisanyLewyBlok = [];
+let zapisanySrodkowyBlok = [];
+let zapisanyPrawyBlok = [];
 
-btnZamknij.addEventListener("click", () => {
-    okienko.style.display = 'none';
+function dodajTekstDoBloku(blok, tekst, klasa) {
+    const span = document.createElement('span');
+    span.className = klasa;
+    span.textContent = tekst;
+    blok.append(span);
+}
+
+function pokazCzysteBloki() {
+    trybCzystychBlokow = true;
+    btnPokazWiecej.textContent = 'Wróć';
+
+    zapisanyLewyBlok = [...lewyPrzycisk.childNodes];
+    zapisanySrodkowyBlok = [...przyciskPogoda.childNodes];
+    zapisanyPrawyBlok = [...prawyPrzycisk.childNodes];
+
+    lewyPrzycisk.textContent = '';
+    przyciskPogoda.textContent = '';
+    prawyPrzycisk.textContent = '';
+
+    dodajTekstDoBloku(lewyPrzycisk, 'Blok 1', 'duzy-tekst');
+    dodajTekstDoBloku(lewyPrzycisk, '67 bingus');
+    dodajTekstDoBloku(lewyPrzycisk, 'KALILEK');
+
+    dodajTekstDoBloku(przyciskPogoda, 'Blok 2', 'maly-tekst');
+    dodajTekstDoBloku(przyciskPogoda, 'Środkowy blok', 'duze-miasto');
+    dodajTekstDoBloku(przyciskPogoda, '--', 'wielka-temperatura');
+
+    dodajTekstDoBloku(prawyPrzycisk, 'Blok 3', 'duzy-tekst');
+    dodajTekstDoBloku(prawyPrzycisk, 'KAMIL DASZ RADE');
+    dodajTekstDoBloku(prawyPrzycisk, 'elklerek bananrek rip');
+}
+
+function wrocDoPogody() {
+    trybCzystychBlokow = false;
+    btnPokazWiecej.textContent = 'Pokaz wiecej';
+
+    lewyPrzycisk.textContent = '';
+    przyciskPogoda.textContent = '';
+    prawyPrzycisk.textContent = '';
+
+    lewyPrzycisk.append(...zapisanyLewyBlok);
+    przyciskPogoda.append(...zapisanySrodkowyBlok);
+    prawyPrzycisk.append(...zapisanyPrawyBlok);
+}
+
+btnPokazWiecej.addEventListener('click', () => {
+    if (trybCzystychBlokow === false) {
+        pokazCzysteBloki();
+    } else {
+        wrocDoPogody();
+    }
 });
 
 btnUstawienia.addEventListener("click", () => {
