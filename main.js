@@ -366,15 +366,8 @@ const daneFaq = [
     {
         pytanie: "Czy planujecie dalszy rozwój strony?",
         odpowiedz: "Oczywiscie! Mamy już wiele planów jak udoskonalić naszą już dobrze działającą stronę. Jednak potrzebujemy trochę czasu żeby je móc wdrożyć. "
-    },
-    {
-        pytanie:"Co jesli nie moge znalezc swojego miasta?",
-        odpowiedz: "No to masz problem..."
-    },
-    {
-        pytanie:"Gdzie znalezc banana Leclerca?",
-        odpowiedz:"Wystarczy kliknac przycisk 'pokaz wiecej'."
     }
+    
 
 ];
 daneFaq.forEach(element => {
