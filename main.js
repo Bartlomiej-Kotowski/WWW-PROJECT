@@ -232,7 +232,12 @@ inputMiasto.addEventListener("keydown", async (e) => {
         if(trybCzystychBlokow === true){
             wrocDoPogody();
         }
+        const regex = /[0-9]/;
         let wpisanemiasto = document.getElementById('wpisywanie').value.trim().toUpperCase();
+        if(wpisanemiasto.match(regex)){
+            alert("Niedozwolone znaki!");
+            return;
+        }
         try {
             const MIASTO = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${wpisanemiasto}&count=1&language=pl&format=json`);
             const dane = await MIASTO.json();
