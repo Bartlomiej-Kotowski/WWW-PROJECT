@@ -229,6 +229,9 @@ btnMotyw.addEventListener("click", () => {
 
 inputMiasto.addEventListener("keydown", async (e) => {
     if (e.key === "Enter") {
+        if(trybCzystychBlokow === true){
+            wrocDoPogody();
+        }
         let wpisanemiasto = document.getElementById('wpisywanie').value.trim().toUpperCase();
         try {
             const MIASTO = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${wpisanemiasto}&count=1&language=pl&format=json`);
@@ -268,8 +271,8 @@ inputMiasto.addEventListener("keydown", async (e) => {
         span.className = 'maly-tekst';
         span.textContent = godziny[k]+':00  -  '+Math.round(pogodaDane.hourly.temperature_2m[godziny[k]+czynastepnydzien])+'°C';
         prawyPrzycisk.append(span);
-        cisnienia[k] = pogodaDane.hourly.surface_pressure[godz+czynastepnydzien]+' hPa';
-        zachmurzenia[k] = pogodaDane.hourly.cloud_cover[godz+czynastepnydzien]+'%';
+        cisnienia[k] = pogodaDane.hourly.surface_pressure[godziny[k]+czynastepnydzien]+' hPa';
+        zachmurzenia[k] = pogodaDane.hourly.cloud_cover[godziny[k]+czynastepnydzien]+'%';
         k++;
     });
     lewyPrzycisk.textContent = ''
