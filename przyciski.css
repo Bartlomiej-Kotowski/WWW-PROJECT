@@ -1,0 +1,81 @@
+.boczny_przycisk {
+    background-image: linear-gradient(to left, skyblue, #c6d1cd);
+    border-radius: 30px;
+    color: black;
+    width: 90%;
+    max-width: 350px;;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    border:none;
+    height: 90%;
+    max-height: 500px;
+}
+.boczny_przycisk .maly-tekst {
+    font-size: 16px;
+}
+.boczny_przycisk .duzy-tekst {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.przycisk {
+    background-image: linear-gradient(to left, skyblue, #c6d1cd);
+    border-radius: 30px;
+    color: black;
+    width: 90%;
+    max-width: 350px;;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    border:none;
+    height: 90%;
+    max-height: 500px;
+}
+
+.przycisk .maly-tekst {
+    font-size: 16px;
+}
+
+.przycisk .duze-miasto {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.przycisk .wielka-temperatura {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.gorny-lewy{
+    float:left;
+}
+.gorny-prawy{
+    float:right;
+}
+#przycisk-dolny,#zamknij{
+    text-align:center;
+    bottom: 0;
+    cursor: pointer;
+}
+#zamknij {
+    width: 100px;
+}
+.gorny-lewy,.gorny-prawy,#przycisk-dolny,#zamknij{
+   background-image: linear-gradient(to left, skyblue, #c6d1cd);
+   color: black;
+   border: none;
+   border-radius: 30px;
+   padding: 20px 10px;
+}
+
+#przycisk-motyw {
+    background-image: linear-gradient(to left, skyblue, #c6d1cd);
+    color: black;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}

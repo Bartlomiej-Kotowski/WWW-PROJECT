@@ -1,0 +1,35 @@
+body.dark-mode {
+    background-image: linear-gradient(to bottom, #121212, #2d2d2d);
+    color: white;
+}
+
+body.dark-mode .boczny_przycisk,
+body.dark-mode .przycisk,
+body.dark-mode .gorny-lewy,
+body.dark-mode .gorny-prawy,
+body.dark-mode .kafelek-faq,
+body.dark-mode #przycisk-dolny,
+body.dark-mode #zamknij,
+body.dark-mode #okienko,
+body.dark-mode #przycisk-motyw {
+    background-image: linear-gradient(to left, #333333, #555555);
+    color: white;
+}
+
+body.dark-mode .menu_gorne p,
+body.dark-mode .menu_dolne a,
+body.dark-mode .kafelek-osoba h4 {
+    color: white;
+}
+
+body.dark-mode .kafelek-osoba,
+body.dark-mode .kafelek-faq {
+    background-color: rgba(50, 50, 50, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.dark-mode .kafelek-faq h3 {
+    color: #66b2ff;
+    border-bottom-color: rgb(255, 255, 255);
+}

@@ -1,0 +1,76 @@
+#faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    gap: 10px; 
+    margin-top: 80px;
+}
+
+.kafelek-faq {
+    padding: 25px 40px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    max-width: 600px;
+    text-align: left;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.kafelek-faq h3 {
+    color: #004d99; 
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding-bottom: 10px;
+}
+
+#onas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    width: 100%;
+}
+
+.kontener-zespolu {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; 
+    max-width: 1200px;
+}
+
+.kafelek-osoba {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    padding: 40px;
+    width: 300px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.kafelek-osoba h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.kafelek-osoba h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: #333;
+}
+
+
+.kafelek-osoba, .kafelek-faq {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+}
+
+.kafelek-osoba:hover, .kafelek-faq:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
+}
+

@@ -1,305 +1,305 @@
-document.body.innerHTML = '';//sprawdza czy cos jest w body
+// document.body.innerHTML = '';//sprawdza czy cos jest w body
 
-const ruchomeTlo = document.createElement('div');
-ruchomeTlo.className = 'ruchome-tlo';
+// const ruchomeTlo = document.createElement('div');
+// ruchomeTlo.className = 'ruchome-tlo';
 
-const slonce = document.createElement('div');
-slonce.className = 'slonce';
-ruchomeTlo.append(slonce);
+// const slonce = document.createElement('div');
+// slonce.className = 'slonce';
+// ruchomeTlo.append(slonce);
 
-const pasChmur = document.createElement('div');
-pasChmur.className = 'pas-chmur';
-for (let i = 1; i <= 8; i++) {
-  const chmura = document.createElement('div');
-  chmura.className = `chmura chmura${i}`;
-  pasChmur.append(chmura);
-}
-ruchomeTlo.append(pasChmur);
-document.body.append(ruchomeTlo);
+// const pasChmur = document.createElement('div');
+// pasChmur.className = 'pas-chmur';
+// for (let i = 1; i <= 8; i++) {
+//   const chmura = document.createElement('div');
+//   chmura.className = `chmura chmura${i}`;
+//   pasChmur.append(chmura);
+// }
+// ruchomeTlo.append(pasChmur);
+// document.body.append(ruchomeTlo);
 
 
-const menuGorne = document.createElement('div');
-menuGorne.className = 'menu_gorne';
-document.body.append(menuGorne);
+// const menuGorne = document.createElement('div');
+// menuGorne.className = 'menu_gorne';
+// document.body.append(menuGorne);
 
-const srodek = document.createElement('div');
-srodek.className = 'srodek';
-srodek.id = 'glowna';
-srodek.classList.add('strona');
+// const srodek = document.createElement('div');
+// srodek.className = 'srodek';
+// srodek.id = 'glowna';
+// srodek.classList.add('strona');
 
-const lewyPrzycisk = document.createElement('button');
-lewyPrzycisk.className = 'boczny_przycisk';
-const tytulTydzien = document.createElement('span');
-tytulTydzien.className = 'duzy-tekst';
-tytulTydzien.textContent = 'Prognoza na tydzień (12:00)';
-lewyPrzycisk.append(tytulTydzien);
-for(i=0; i<7; i++){
-    const span = document.createElement('span');
-    span.className = 'maly-tekst';
-    span.textContent = '--';
-    lewyPrzycisk.append(span);
-};
+// const lewyPrzycisk = document.createElement('button');
+// lewyPrzycisk.className = 'boczny_przycisk';
+// const tytulTydzien = document.createElement('span');
+// tytulTydzien.className = 'duzy-tekst';
+// tytulTydzien.textContent = 'Prognoza na tydzień (12:00)';
+// lewyPrzycisk.append(tytulTydzien);
+// for(i=0; i<7; i++){
+//     const span = document.createElement('span');
+//     span.className = 'maly-tekst';
+//     span.textContent = '--';
+//     lewyPrzycisk.append(span);
+// };
 
-const przyciskPogoda = document.createElement('button');
-przyciskPogoda.className = 'przycisk';
-const malyTekst = document.createElement('span');
-malyTekst.className = 'maly-tekst';
-malyTekst.textContent = 'Aktualna Pogoda';
-const obecnaGodzina = document.createElement('span');
-obecnaGodzina.className='maly-tekst';
-obecnaGodzina.textContent='Obecna godzina: ';
-const duzeMiasto = document.createElement('span');
-duzeMiasto.className = 'duze-miasto';
-duzeMiasto.textContent = 'Nie wybrano miasta';
-const wielkaTemp = document.createElement('span');
-wielkaTemp.className = 'wielka-temperatura';
-wielkaTemp.textContent = '--°C';
-przyciskPogoda.append(malyTekst, obecnaGodzina, duzeMiasto, wielkaTemp);
+// const przyciskPogoda = document.createElement('button');
+// przyciskPogoda.className = 'przycisk';
+// const malyTekst = document.createElement('span');
+// malyTekst.className = 'maly-tekst';
+// malyTekst.textContent = 'Aktualna Pogoda';
+// const obecnaGodzina = document.createElement('span');
+// obecnaGodzina.className='maly-tekst';
+// obecnaGodzina.textContent='Obecna godzina: ';
+// const duzeMiasto = document.createElement('span');
+// duzeMiasto.className = 'duze-miasto';
+// duzeMiasto.textContent = 'Nie wybrano miasta';
+// const wielkaTemp = document.createElement('span');
+// wielkaTemp.className = 'wielka-temperatura';
+// wielkaTemp.textContent = '--°C';
+// przyciskPogoda.append(malyTekst, obecnaGodzina, duzeMiasto, wielkaTemp);
 
-const prawyPrzycisk = document.createElement('button');
-prawyPrzycisk.className = 'boczny_przycisk';
-const tytulDzis = document.createElement('span');
-tytulDzis.className = 'duzy-tekst';
-tytulDzis.textContent = 'Prognoza na dziś';
-prawyPrzycisk.append(tytulDzis);
-for(i=0; i<8; i++){
-        const span = document.createElement('span');
-        span.className = 'maly-tekst';
-        span.textContent = '--:00';
-        prawyPrzycisk.append(span);
-};
+// const prawyPrzycisk = document.createElement('button');
+// prawyPrzycisk.className = 'boczny_przycisk';
+// const tytulDzis = document.createElement('span');
+// tytulDzis.className = 'duzy-tekst';
+// tytulDzis.textContent = 'Prognoza na dziś';
+// prawyPrzycisk.append(tytulDzis);
+// for(i=0; i<8; i++){
+//         const span = document.createElement('span');
+//         span.className = 'maly-tekst';
+//         span.textContent = '--:00';
+//         prawyPrzycisk.append(span);
+// };
 
-srodek.append(lewyPrzycisk, przyciskPogoda, prawyPrzycisk);
-document.body.append(srodek);
+// srodek.append(lewyPrzycisk, przyciskPogoda, prawyPrzycisk);
+// document.body.append(srodek);
 
-const przyciskiGorne = document.createElement('div');
-przyciskiGorne.className = 'przyciski-gorne';
-const inputMiasto = document.createElement('input');
-inputMiasto.type = 'text';
-inputMiasto.id = 'wpisywanie';
-inputMiasto.className = 'gorny-lewy';
-inputMiasto.placeholder = 'Wpisz miasto';
-const ustawieniaPojemnik = document.createElement('div');
-ustawieniaPojemnik.className = 'ustawienia-pojemnik';
-const btnUstawienia = document.createElement('button');
-btnUstawienia.className = 'gorny-prawy';
-btnUstawienia.id = 'przycisk-ustawienia';
-btnUstawienia.textContent = 'Ustawienia';
-const menuUstawienia = document.createElement('div');
-menuUstawienia.id = 'menu-ustawienia';
-const btnMotyw = document.createElement('button');
-btnMotyw.id = 'przycisk-motyw';
-btnMotyw.textContent = 'Motyw ciemny';
+// const przyciskiGorne = document.createElement('div');
+// przyciskiGorne.className = 'przyciski-gorne';
+// const inputMiasto = document.createElement('input');
+// inputMiasto.type = 'text';
+// inputMiasto.id = 'wpisywanie';
+// inputMiasto.className = 'gorny-lewy';
+// inputMiasto.placeholder = 'Wpisz miasto';
+// const ustawieniaPojemnik = document.createElement('div');
+// ustawieniaPojemnik.className = 'ustawienia-pojemnik';
+// const btnUstawienia = document.createElement('button');
+// btnUstawienia.className = 'gorny-prawy';
+// btnUstawienia.id = 'przycisk-ustawienia';
+// btnUstawienia.textContent = 'Ustawienia';
+// const menuUstawienia = document.createElement('div');
+// menuUstawienia.id = 'menu-ustawienia';
+// const btnMotyw = document.createElement('button');
+// btnMotyw.id = 'przycisk-motyw';
+// btnMotyw.textContent = 'Motyw ciemny';
 
-menuUstawienia.append(btnMotyw);
-ustawieniaPojemnik.append(btnUstawienia, menuUstawienia);
-przyciskiGorne.append(inputMiasto, ustawieniaPojemnik);
-document.body.append(przyciskiGorne);
+// menuUstawienia.append(btnMotyw);
+// ustawieniaPojemnik.append(btnUstawienia, menuUstawienia);
+// przyciskiGorne.append(inputMiasto, ustawieniaPojemnik);
+// document.body.append(przyciskiGorne);
 
-function zmianastrony(indeks) {
-    document.querySelectorAll('.strona').forEach(podstrona => {
-        podstrona.style.display = 'none';
-    });
-    if(strony[indeks] !== 'glowna') {
-        inputMiasto.style.display = 'none';
-        btnPokazWiecej.style.display = 'none';
-    }
-    else {
-        inputMiasto.style.display = 'block';
-        btnPokazWiecej.style.display = 'block';
-    }
-    document.getElementById(strony[indeks]).style.display = 'flex';
-}
+// function zmianastrony(indeks) {
+//     document.querySelectorAll('.strona').forEach(podstrona => {
+//         podstrona.style.display = 'none';
+//     });
+//     if(strony[indeks] !== 'glowna') {
+//         inputMiasto.style.display = 'none';
+//         btnPokazWiecej.style.display = 'none';
+//     }
+//     else {
+//         inputMiasto.style.display = 'block';
+//         btnPokazWiecej.style.display = 'block';
+//     }
+//     document.getElementById(strony[indeks]).style.display = 'flex';
+// }
 
-const menulista = document.createElement('div');
-menulista.className = 'menu-lista';
-const nav = document.createElement('nav');
-const ul = document.createElement('ul');
-const linkiMenu = ['Strona główna', 'O nas', 'FAQ'];
-const strony = ['glowna', 'onas', 'faq'];
-linkiMenu.forEach(tekst => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = '#' + strony[linkiMenu.indexOf(tekst)];
-    a.textContent = tekst;
-    a.addEventListener("click", (e) => {
-        e.preventDefault();
-        zmianastrony(linkiMenu.indexOf(tekst));
-    });
-    li.append(a);
-    ul.append(li);
-});
-nav.append(ul);
-menulista.append(nav);
-document.body.append(menulista);
-const menuDolne = document.createElement('div');
-menuDolne.className = 'menu_dolne';
-const btnPokazWiecej = document.createElement('button');
-btnPokazWiecej.id = 'przycisk-dolny';
-btnPokazWiecej.textContent = 'Pokaz wiecej';
-menuDolne.append(btnPokazWiecej);
-document.body.append(menuDolne);
+// const menulista = document.createElement('div');
+// menulista.className = 'menu-lista';
+// const nav = document.createElement('nav');
+// const ul = document.createElement('ul');
+// const linkiMenu = ['Strona główna', 'O nas', 'FAQ'];
+// const strony = ['glowna', 'onas', 'faq'];
+// linkiMenu.forEach(tekst => {
+//     const li = document.createElement('li');
+//     const a = document.createElement('a');
+//     a.href = '#' + strony[linkiMenu.indexOf(tekst)];
+//     a.textContent = tekst;
+//     a.addEventListener("click", (e) => {
+//         e.preventDefault();
+//         zmianastrony(linkiMenu.indexOf(tekst));
+//     });
+//     li.append(a);
+//     ul.append(li);
+// });
+// nav.append(ul);
+// menulista.append(nav);
+// document.body.append(menulista);
+// const menuDolne = document.createElement('div');
+// menuDolne.className = 'menu_dolne';
+// const btnPokazWiecej = document.createElement('button');
+// btnPokazWiecej.id = 'przycisk-dolny';
+// btnPokazWiecej.textContent = 'Pokaz wiecej';
+// menuDolne.append(btnPokazWiecej);
+// document.body.append(menuDolne);
 
-let trybCzystychBlokow = false;
+// let trybCzystychBlokow = false;
 
-let zapisanyLewyBlok = [];
-let zapisanySrodkowyBlok = [];
-let zapisanyPrawyBlok = [];
+// let zapisanyLewyBlok = [];
+// let zapisanySrodkowyBlok = [];
+// let zapisanyPrawyBlok = [];
 
-function dodajTekstDoBloku(blok, tekst, klasa) {
-    const span = document.createElement('span');
-    span.className = klasa;
-    span.textContent = tekst;
-    blok.append(span);
-}
-let godziny = ['--','--','--','--','--','--','--','--'];
-let szansa = '--';
-let godzinateraz = '';
-let cisnienia = ['','','','','','','',''];
-let zachmurzenia = ['','','','','','','',''];
-function pokazCzysteBloki() {
-    trybCzystychBlokow = true;
-    btnPokazWiecej.textContent = 'Wróć';
+// function dodajTekstDoBloku(blok, tekst, klasa) {
+//     const span = document.createElement('span');
+//     span.className = klasa;
+//     span.textContent = tekst;
+//     blok.append(span);
+// }
+// let godziny = ['--','--','--','--','--','--','--','--'];
+// let szansa = '--';
+// let godzinateraz = '';
+// let cisnienia = ['','','','','','','',''];
+// let zachmurzenia = ['','','','','','','',''];
+// function pokazCzysteBloki() {
+//     trybCzystychBlokow = true;
+//     btnPokazWiecej.textContent = 'Wróć';
 
-    zapisanyLewyBlok = [...lewyPrzycisk.childNodes];
-    zapisanySrodkowyBlok = [...przyciskPogoda.childNodes];
-    zapisanyPrawyBlok = [...prawyPrzycisk.childNodes];
+//     zapisanyLewyBlok = [...lewyPrzycisk.childNodes];
+//     zapisanySrodkowyBlok = [...przyciskPogoda.childNodes];
+//     zapisanyPrawyBlok = [...prawyPrzycisk.childNodes];
 
-    lewyPrzycisk.textContent = '';
-    przyciskPogoda.textContent = '';
-    prawyPrzycisk.textContent = '';
+//     lewyPrzycisk.textContent = '';
+//     przyciskPogoda.textContent = '';
+//     prawyPrzycisk.textContent = '';
 
-    dodajTekstDoBloku(lewyPrzycisk, 'Ciśnienie atomsfetyczne', 'duzy-tekst');
-    let i = 0;
-    let j = 0;
-    godziny.forEach(godz => {
-        dodajTekstDoBloku(lewyPrzycisk, godz+':00 - '+cisnienia[i], 'maly-tekst');
-        i++;
-    });
+//     dodajTekstDoBloku(lewyPrzycisk, 'Ciśnienie atomsfetyczne', 'duzy-tekst');
+//     let i = 0;
+//     let j = 0;
+//     godziny.forEach(godz => {
+//         dodajTekstDoBloku(lewyPrzycisk, godz+':00 - '+cisnienia[i], 'maly-tekst');
+//         i++;
+//     });
 
-    dodajTekstDoBloku(przyciskPogoda, 'Aktualna Pogoda', 'maly-tekst');
-    dodajTekstDoBloku(przyciskPogoda, 'Obecna godzina: '+godzinateraz, 'maly-tekst');
-    dodajTekstDoBloku(przyciskPogoda, 'Szansa na opady', 'duze-miasto');
-    dodajTekstDoBloku(przyciskPogoda, szansa + '%', 'wielka-temperatura');
+//     dodajTekstDoBloku(przyciskPogoda, 'Aktualna Pogoda', 'maly-tekst');
+//     dodajTekstDoBloku(przyciskPogoda, 'Obecna godzina: '+godzinateraz, 'maly-tekst');
+//     dodajTekstDoBloku(przyciskPogoda, 'Szansa na opady', 'duze-miasto');
+//     dodajTekstDoBloku(przyciskPogoda, szansa + '%', 'wielka-temperatura');
 
-    dodajTekstDoBloku(prawyPrzycisk, 'Zachmurzenie', 'duzy-tekst');
-    godziny.forEach(godz => {
-        dodajTekstDoBloku(prawyPrzycisk, godz+':00 - '+zachmurzenia[j], 'maly-tekst');
-        j++;
-    });
-}
+//     dodajTekstDoBloku(prawyPrzycisk, 'Zachmurzenie', 'duzy-tekst');
+//     godziny.forEach(godz => {
+//         dodajTekstDoBloku(prawyPrzycisk, godz+':00 - '+zachmurzenia[j], 'maly-tekst');
+//         j++;
+//     });
+// }
 
-function wrocDoPogody() {
-    trybCzystychBlokow = false;
-    btnPokazWiecej.textContent = 'Pokaz wiecej';
+// function wrocDoPogody() {
+//     trybCzystychBlokow = false;
+//     btnPokazWiecej.textContent = 'Pokaz wiecej';
 
-    lewyPrzycisk.textContent = '';
-    przyciskPogoda.textContent = '';
-    prawyPrzycisk.textContent = '';
+//     lewyPrzycisk.textContent = '';
+//     przyciskPogoda.textContent = '';
+//     prawyPrzycisk.textContent = '';
 
-    lewyPrzycisk.append(...zapisanyLewyBlok);
-    przyciskPogoda.append(...zapisanySrodkowyBlok);
-    prawyPrzycisk.append(...zapisanyPrawyBlok);
-}
+//     lewyPrzycisk.append(...zapisanyLewyBlok);
+//     przyciskPogoda.append(...zapisanySrodkowyBlok);
+//     prawyPrzycisk.append(...zapisanyPrawyBlok);
+// }
 
-btnPokazWiecej.addEventListener('click', () => {
-    if (trybCzystychBlokow === false) {
-        pokazCzysteBloki();
-    } else {
-        wrocDoPogody();
-    }
-});
+// btnPokazWiecej.addEventListener('click', () => {
+//     if (trybCzystychBlokow === false) {
+//         pokazCzysteBloki();
+//     } else {
+//         wrocDoPogody();
+//     }
+// });
 
-btnUstawienia.addEventListener("click", () => {
-    if (menuUstawienia.style.display === "block") {
-        menuUstawienia.style.display = "none";
-    } else {
-        menuUstawienia.style.display = "block";
-    }
-});
+// btnUstawienia.addEventListener("click", () => {
+//     if (menuUstawienia.style.display === "block") {
+//         menuUstawienia.style.display = "none";
+//     } else {
+//         menuUstawienia.style.display = "block";
+//     }
+// });
 
-btnMotyw.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        btnMotyw.textContent = "Motyw jasny";
-    } else {
-        btnMotyw.textContent = "Motyw ciemny";
-    }
-});
+// btnMotyw.addEventListener("click", () => {
+//     document.body.classList.toggle("dark-mode");
+//     if (document.body.classList.contains("dark-mode")) {
+//         btnMotyw.textContent = "Motyw jasny";
+//     } else {
+//         btnMotyw.textContent = "Motyw ciemny";
+//     }
+// });
 
-inputMiasto.addEventListener("keydown", async (e) => {
-    if (e.key === "Enter") {
-        if(trybCzystychBlokow === true){
-            wrocDoPogody();
-        }
-        const regex = /[0-9]/;
-        let wpisanemiasto = document.getElementById('wpisywanie').value.trim().toUpperCase();
-        if(wpisanemiasto.match(regex)){
-            alert("Niedozwolone znaki!");
-            return;
-        }
-        try {
-            const MIASTO = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${wpisanemiasto}&count=1&language=pl&format=json`);
-            const dane = await MIASTO.json();
-            if(!dane.results || dane.results.length === 0) {
-            alert("Nie znaleziono miasta");
-            return;
-        }
-    const znalezioneMiasto = dane.results[0];
-    const lat = znalezioneMiasto.latitude;
-    const lon = znalezioneMiasto.longitude;
-    const godzina = Number(new Date().toLocaleTimeString('pl-PL', {
-        timeZone: znalezioneMiasto.timezone,
-        hour: '2-digit',
-        hour12: false
-    }));
-    const minuta = String(new Date().getMinutes()).padStart(2, '0');
-    const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=precipitation_probability_max&hourly=temperature_2m,surface_pressure,cloud_cover&current=temperature_2m,apparent_temperature&timezone=auto&forecast_days=10`
-    const pogodaOdpowiedz = await fetch(API);
-    const pogodaDane = await pogodaOdpowiedz.json();
-    console.log(pogodaDane);
-    duzeMiasto.textContent = wpisanemiasto;
-    wielkaTemp.textContent = Math.round(pogodaDane.current.temperature_2m)+'°C' + '   ('+Math.round(pogodaDane.current.apparent_temperature)+'°C)';
-    godzinateraz = godzina+":"+minuta;
-    obecnaGodzina.textContent = 'Obecna godzina: '+godzinateraz;
-    prawyPrzycisk.textContent = ''
-    prawyPrzycisk.append(tytulDzis);
-    godziny = [godzina+1,godzina+2,godzina+3,godzina+4,godzina+5,godzina+6,godzina+7,godzina+8];
-    let czynastepnydzien = 0;
-    let k = 0;
-    godziny.forEach(godz => {
-        if(godz > 23){
-            godziny[k] -= 24;
-            czynastepnydzien += 24;
-        }
-        const span = document.createElement('span');
-        span.className = 'maly-tekst';
-        span.textContent = godziny[k]+':00  -  '+Math.round(pogodaDane.hourly.temperature_2m[godziny[k]+czynastepnydzien])+'°C';
-        prawyPrzycisk.append(span);
-        cisnienia[k] = pogodaDane.hourly.surface_pressure[godziny[k]+czynastepnydzien]+' hPa';
-        zachmurzenia[k] = pogodaDane.hourly.cloud_cover[godziny[k]+czynastepnydzien]+'%';
-        k++;
-    });
-    lewyPrzycisk.textContent = ''
-    lewyPrzycisk.append(tytulTydzien);
-    for(i=1; i<=7; i++){
-        const data = new Date();
-        data.setDate(data.getDate() + i);
-        const dzien = new Intl.DateTimeFormat('pl-PL', {
-            weekday: 'short',
-            timeZone: znalezioneMiasto.timezone
-        }).format(data);
-        const span = document.createElement('span');
-        span.className = 'maly-tekst';
-        span.textContent = dzien+' - '+Math.round(pogodaDane.hourly.temperature_2m[12+i*24])+'°C';
-        lewyPrzycisk.append(span);
-    }
-    szansa = pogodaDane.daily.precipitation_probability_max[0];
-    } catch (error) {
-        console.error("Błąd podczas pobierania danych:", error);
-        alert("Wystąpił błąd podczas pobierania danych. Sprawdź konsolę dla więcej informacji.");
-    }
-}});
+// inputMiasto.addEventListener("keydown", async (e) => {
+//     if (e.key === "Enter") {
+//         if(trybCzystychBlokow === true){
+//             wrocDoPogody();
+//         }
+//         const regex = /[0-9]/;
+//         let wpisanemiasto = document.getElementById('wpisywanie').value.trim().toUpperCase();
+//         if(wpisanemiasto.match(regex)){
+//             alert("Niedozwolone znaki!");
+//             return;
+//         }
+//         try {
+//             const MIASTO = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${wpisanemiasto}&count=1&language=pl&format=json`);
+//             const dane = await MIASTO.json();
+//             if(!dane.results || dane.results.length === 0) {
+//             alert("Nie znaleziono miasta");
+//             return;
+//         }
+//     const znalezioneMiasto = dane.results[0];
+//     const lat = znalezioneMiasto.latitude;
+//     const lon = znalezioneMiasto.longitude;
+//     const godzina = Number(new Date().toLocaleTimeString('pl-PL', {
+//         timeZone: znalezioneMiasto.timezone,
+//         hour: '2-digit',
+//         hour12: false
+//     }));
+//     const minuta = String(new Date().getMinutes()).padStart(2, '0');
+//     const API = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=precipitation_probability_max&hourly=temperature_2m,surface_pressure,cloud_cover&current=temperature_2m,apparent_temperature&timezone=auto&forecast_days=10`
+//     const pogodaOdpowiedz = await fetch(API);
+//     const pogodaDane = await pogodaOdpowiedz.json();
+//     console.log(pogodaDane);
+//     duzeMiasto.textContent = wpisanemiasto;
+//     wielkaTemp.textContent = Math.round(pogodaDane.current.temperature_2m)+'°C' + '   ('+Math.round(pogodaDane.current.apparent_temperature)+'°C)';
+//     godzinateraz = godzina+":"+minuta;
+//     obecnaGodzina.textContent = 'Obecna godzina: '+godzinateraz;
+//     prawyPrzycisk.textContent = ''
+//     prawyPrzycisk.append(tytulDzis);
+//     godziny = [godzina+1,godzina+2,godzina+3,godzina+4,godzina+5,godzina+6,godzina+7,godzina+8];
+//     let czynastepnydzien = 0;
+//     let k = 0;
+//     godziny.forEach(godz => {
+//         if(godz > 23){
+//             godziny[k] -= 24;
+//             czynastepnydzien += 24;
+//         }
+//         const span = document.createElement('span');
+//         span.className = 'maly-tekst';
+//         span.textContent = godziny[k]+':00  -  '+Math.round(pogodaDane.hourly.temperature_2m[godziny[k]+czynastepnydzien])+'°C';
+//         prawyPrzycisk.append(span);
+//         cisnienia[k] = pogodaDane.hourly.surface_pressure[godziny[k]+czynastepnydzien]+' hPa';
+//         zachmurzenia[k] = pogodaDane.hourly.cloud_cover[godziny[k]+czynastepnydzien]+'%';
+//         k++;
+//     });
+//     lewyPrzycisk.textContent = ''
+//     lewyPrzycisk.append(tytulTydzien);
+//     for(i=1; i<=7; i++){
+//         const data = new Date();
+//         data.setDate(data.getDate() + i);
+//         const dzien = new Intl.DateTimeFormat('pl-PL', {
+//             weekday: 'short',
+//             timeZone: znalezioneMiasto.timezone
+//         }).format(data);
+//         const span = document.createElement('span');
+//         span.className = 'maly-tekst';
+//         span.textContent = dzien+' - '+Math.round(pogodaDane.hourly.temperature_2m[12+i*24])+'°C';
+//         lewyPrzycisk.append(span);
+//     }
+//     szansa = pogodaDane.daily.precipitation_probability_max[0];
+//     } catch (error) {
+//         console.error("Błąd podczas pobierania danych:", error);
+//         alert("Wystąpił błąd podczas pobierania danych. Sprawdź konsolę dla więcej informacji.");
+//     }
+// }});
 
 
 

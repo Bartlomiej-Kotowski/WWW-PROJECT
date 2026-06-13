@@ -1,4 +1,4 @@
-body {
+/* body {
     background-image: linear-gradient(to bottom, skyblue, white);
     min-height: 100vh;
     margin: 0;
@@ -7,14 +7,14 @@ body {
     align-items: center;
     justify-content: center;
     overflow-y: auto;
-}
+} */
 @media (max-width: 600px) {
     .menu_gorne {
         position: relative;
         top: 60px;
     }
 }
-.menu_dolne {
+/* .menu_dolne {
     display: flex;
     flex-direction: column;
     @media (max-width: 600px) {
@@ -53,8 +53,8 @@ body {
     100% {
         transform: scale(1);
     }
-}
-.boczny_przycisk {
+} */
+/* .boczny_przycisk {
     background-image: linear-gradient(to left, skyblue, #c6d1cd);
     border-radius: 30px;
     color: black;
@@ -73,8 +73,8 @@ body {
 .boczny_przycisk .duzy-tekst {
     font-size: 20px;
     font-weight: bold;
-}
-.srodek {
+} */
+/* .srodek {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -89,8 +89,8 @@ body {
             }
         }
     }
-}
-.przycisk {
+} */
+/* .przycisk {
     background-image: linear-gradient(to left, skyblue, #c6d1cd);
     border-radius: 30px;
     color: black;
@@ -116,14 +116,14 @@ body {
 .przycisk .wielka-temperatura {
     font-size: 48px;
     font-weight: bold;
-}
+} */
 
-.przyciski-gorne {
+/* .przyciski-gorne {
 width:100% ;
 position: absolute;
 top: 0;
-}
-.gorny-lewy{
+} */
+/* .gorny-lewy{
     float:left;
 }
 .gorny-prawy{
@@ -143,7 +143,7 @@ top: 0;
    border: none;
    border-radius: 30px;
    padding: 20px 10px;
-}
+} */
 @media (min-width: 2000px) {
     .boczny_przycisk, .przycisk {
         max-width: 600px;
@@ -173,7 +173,7 @@ top: 0;
         font-size: 30px;
     }
 }
-.ustawienia-pojemnik {
+/* .ustawienia-pojemnik {
     float: right;
     position: relative;
 }
@@ -184,9 +184,9 @@ top: 0;
     top: 70px;
     right: 10px;
     background-color: transparent;
-}
+} */
 
-#przycisk-motyw {
+/* #przycisk-motyw {
     background-image: linear-gradient(to left, skyblue, #c6d1cd);
     color: black;
     border: none;
@@ -194,9 +194,9 @@ top: 0;
     padding: 15px 20px;
     cursor: pointer;
     font-size: 16px;
-}
+} */
 
-body.dark-mode {
+/* body.dark-mode {
     background-image: linear-gradient(to bottom, #121212, #2d2d2d);
     color: white;
 }
@@ -218,9 +218,9 @@ body.dark-mode .menu_gorne p,
 body.dark-mode .menu_dolne a,
 body.dark-mode .kafelek-osoba h4 {
     color: white;
-}
+} */
 
-#faq {
+/* #faq {
     display: flex;
     flex-direction: column;
     align-items: center;   
@@ -295,7 +295,7 @@ body.dark-mode .kafelek-osoba h4 {
     transform: translateY(-8px); 
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
 }
-
+ */
 
 body.dark-mode .kafelek-osoba,
 body.dark-mode .kafelek-faq {

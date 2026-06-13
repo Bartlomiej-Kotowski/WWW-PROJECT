@@ -1,0 +1,63 @@
+@media (max-width: 600px) {
+    .menu_gorne {
+        position: relative;
+        top: 60px;
+    }
+
+    .menu_dolne {
+        position: static;
+        margin-top: 150px;
+        bottom: 0;
+    }
+
+    .menu-lista {
+        top: 50px;
+    }
+
+    .srodek {
+        position: relative;
+        top: 130px;
+        flex-direction: column;
+    }
+
+    .srodek button:nth-child(1) {
+        order: 3;
+    }
+}
+
+@media (min-width: 2000px) {
+    .boczny_przycisk, .przycisk {
+        max-width: 600px;
+        max-height: 700px;
+        padding: 60px 80px;
+    }
+
+    .srodek {
+        gap: 60px;
+    }
+
+    .boczny_przycisk .maly-tekst, .przycisk .maly-tekst {
+        font-size: 32px;
+    }
+
+    .boczny_przycisk .duzy-tekst {
+        font-size: 40px;
+    }
+
+    .przycisk .duze-miasto {
+        font-size: 50px;
+    }
+
+    .przycisk .wielka-temperatura {
+        font-size: 100px;
+    }
+
+    .gorny-lewy, .gorny-prawy, .przycisk-dolny {
+        padding: 30px 50px;
+        font-size: 30px;
+    }
+
+    .gorny-lewy::placeholder {
+        font-size: 30px;
+    }
+}
