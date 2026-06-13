@@ -35,18 +35,28 @@ Projekt pokazuje również wykorzystanie zewnętrznego API do pobierania danych 
 - JavaScript,
 - Open-Meteo API.
 ### Struktura plików
-- main.html – główny plik HTML strony.
-- main.js – plik odpowiedzialny za działanie strony, pobieranie pogody i obsługę przycisków.
-- plik.css – główny plik stylów strony.
-- pogoda-tlo.css – plik odpowiedzialny za animowane tło pogodowe.
-Wygląd strony
-## 
+- main.html – główny plik HTML strony
+- main.js – elementy stron FAQ i o nas
+- tlo.js - animacja chmur w tle
+- pokazwiecej.js i pokaz-wiecej.js - funkcjonalność przycisku pokaż więcej
+- pogoda-api.js - cala logika zwiaząna z API
+- nawigacja.js - logika związana z nawigacją między stronami
+- elementy.js - umieszczanie wszysktich elementów na stronie przy jej pierwszym włączeniu
+- ustawienia.js - logika zmiany trybu na ciemny
+- plik.css, baza.css, przyciski.css, uklad.css – pliki stylu strony głównej
+- pogoda-tlo.css – animowane tło pogodowe
+- podstrony.css - wyglad podstron
+- dark-mode.css - tryb ciemny
+- responsywnosc.css - wygląd na ekranach innych rozmiarów
+
+## Wygląd strony
+
 Strona posiada pogodowe tło z animowanym słońcem i chmurami. Główne informacje są pokazane w trzech dużych blokach. Projekt zawiera również tryb ciemny oraz dostosowanie wyglądu do telefonów i większych ekranów.
 
 ## Autorzy
 
 Projekt został wykonany przez zespół uczniów:
 
-- Kamil Pietrewicz – API i logika strony,
-- Bartłomiej Kotowski – CSS, wygląd i animacje,
-- Igor Rostkowski– budowa elementów strony, FAQ i sekcja „O nas”.
+- Kamil Pietrewicz – API i logika strony
+- Bartłomiej Kotowski – CSS, wygląd, animacje i struktura plików
+- Igor Rostkowski– budowa elementów strony, FAQ i sekcja „O nas”
