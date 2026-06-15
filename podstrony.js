@@ -86,3 +86,66 @@ daneFaq.forEach(element => {
     blokFaq.append(naglowek, akapit);
     faq.append(blokFaq);
 });
+
+const pola = [
+    { tekst: 'Imię:', name: 'imie', type: 'text' },
+    { tekst: 'Email:', name: 'email', type: 'email' },
+    { tekst: 'Numer telefonu: (+48)', name: 'telefon', type: 'tel' },
+    { tekst: 'Opis błędu: (max 200 znaków)', name: 'opis', type: 'textarea' }
+];
+
+const zglos = document.createElement('form');
+zglos.id = 'zglos';
+zglos.style.display = 'none';
+zglos.className = 'strona';
+zglos.method = 'post';
+zglos.classList.add('srodek');
+
+document.body.append(zglos);
+
+pola.forEach(element => {
+    const pole = document.createElement('div');
+
+    const label = document.createElement('label');
+    label.textContent = element.tekst;
+
+    let input;
+
+    if (element.type === 'textarea') {
+        input = document.createElement('textarea');
+    } else {
+        input = document.createElement('input');
+        input.type = element.type;
+    }
+
+    input.name = element.name;
+
+    label.append(input);
+    pole.append(label);
+    zglos.append(pole);
+});
+
+const wyslij = document.createElement('button');
+wyslij.type = 'submit';
+wyslij.textContent = 'Wyślij zgłoszenie';
+
+zglos.append(wyslij);
+
+zglos.addEventListener("submit", function(e){
+    e.preventDefault();
+    const telefon = zglos.querySelector('input[name="telefon"]').value;
+
+    if (!/^\d{9}$/.test(telefon)) {
+        alert("Numer telefonu musi mieć dokładnie 9 cyfr!");
+        return;
+    }
+
+    const opis = zglos.querySelector('[name="opis"]').value;
+
+    if(opis.length>200){
+        alert("Za długa wiadomość!");
+        return;
+    }
+
+    alert("Zgłoszenie wysłane!");
+});

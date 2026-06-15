@@ -60,4 +60,19 @@
     .gorny-lewy::placeholder {
         font-size: 30px;
     }
+
+    #zglos {
+        width: 1200px;
+    }
+
+    #zglos div {
+        grid-template-columns: 500px 1fr;
+    }
+    #zglos textarea {
+        height: 250px;
+        font-size: 20px;
+    }
+    #zglos button, label, input {
+        font-size: 20px;
+    }
 }

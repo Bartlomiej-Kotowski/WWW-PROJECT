@@ -11,7 +11,8 @@ body.dark-mode .kafelek-faq,
 body.dark-mode #przycisk-dolny,
 body.dark-mode #zamknij,
 body.dark-mode #okienko,
-body.dark-mode #przycisk-motyw {
+body.dark-mode #przycisk-motyw,
+body.dark-mode #zglos {
     background-image: linear-gradient(to left, #333333, #555555);
     color: white;
 }
