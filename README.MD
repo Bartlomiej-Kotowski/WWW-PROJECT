@@ -73,7 +73,7 @@ Poniżej zostały umieszczone najważniejsze widoki strony, pokazujące realizac
 ![Tryb ciemny i pokaz wiecej](screeny/trybciemnyPokazwiecej.png)
 
 **6. Obsługa błędów (Komunikat o nieistniejącym mieście)**
-![Komunikat błędu](screeny/komunikat.jpg)
+![Komunikat błędu](screeny/komunikat.png)
 
 ## Autorzy
 
