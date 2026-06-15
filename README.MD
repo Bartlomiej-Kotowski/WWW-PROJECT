@@ -53,6 +53,28 @@ Projekt pokazuje również wykorzystanie zewnętrznego API do pobierania danych 
 
 Strona posiada pogodowe tło z animowanym słońcem i chmurami. Główne informacje są pokazane w trzech dużych blokach. Projekt zawiera również tryb ciemny oraz dostosowanie wyglądu do telefonów i większych ekranów.
 
+## Zrzuty ekranu
+
+Poniżej zostały umieszczone najważniejsze widoki strony, pokazujące realizację założeń projektu:
+
+**1. Widok główny (Pobieranie i wyświetlanie danych z API)**
+![Strona główna](screeny/stronaglowna.png)
+
+**2. Formularz zgłoszeniowy (Walidacja danych)**
+![Formularz z walidacją](screeny/formularz.png)
+
+**3. Dodatkowe widoki (Zakładka O nas)**
+![Zakładka O nas](screeny/onas.png)
+
+**4. Wersja mobilna (Responsywność i mobile-first)**
+![Widok mobilny](screeny/Responsywnosc.png)
+
+**5. Rozszerzenia funkcjonalności (Tryb ciemny i dodatkowe informacje pogodowe)**
+![Tryb ciemny i pokaz wiecej](screeny/trybciemnyPokazwiecej.png)
+
+**6. Obsługa błędów (Komunikat o nieistniejącym mieście)**
+![Komunikat błędu](screeny/komunikat.jpg)
+
 ## Autorzy
 
 Projekt został wykonany przez zespół uczniów:
